@@ -37,6 +37,7 @@ int main() {
     q[front] = 0;
     pro[front].isDone = 1;
     int completed=0, currTime=0;
+    printf("\nGantt's Chart: ");
     while(completed != n) {
         int idx = q[front];
         front++;
@@ -57,6 +58,7 @@ int main() {
             pro[idx].wt = pro[idx].tat - pro[idx].bt;
             pro[idx].remain = 0;
             completed++;
+            printf("%d ", pro[idx].pid);
         }
         for(int i=0; i<n; i++) {
             if(currTime >= pro[i].at && pro[i].isDone == 0) {
