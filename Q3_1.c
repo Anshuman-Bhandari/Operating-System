@@ -7,6 +7,8 @@ typedef struct Process {
 int comp(const void *a, const void *b) {
     st *p1 = (st*)a;
     st *p2 = (st*)b;
+    if(p1->at == p2->at)
+        return p1->pid > p2->pid;
     return p1->at > p2->at;
 }
 int main() {
